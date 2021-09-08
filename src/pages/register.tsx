@@ -8,15 +8,14 @@ interface IFormInput{
     password:string
 }
 
-const Login =()=> {
+const Register =()=> {
     const {register, handleSubmit} = useForm<IFormInput>()
 
     const onSubmit = handleSubmit<IFormInput>(({email, password})=>{
         console.log(email,password)
         try{
-            const result = auth.signInWithEmailAndPassword(email,password)
+            const result = auth.createUserWithEmailAndPassword(email,password)
             console.log(result)
-            // history.push('/home')
         }catch(err){
             console.log(err)
         }
@@ -24,17 +23,17 @@ const Login =()=> {
  
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Register</h1>
             <form  onSubmit={onSubmit}> 
                 <input {...register("email")} type="email" name="email" placeholder="email" required/>
                 <input {...register("password")} type="password" name="password" placeholder="password" required/>
                 <input type="submit" />
             </form>
-            <div>
-          <p>New user? Register here</p>
+       <div>
+          <p>Already have an account? Login</p> 
        </div>
         </div>
     );
 }
 
-export default Login;
+export default Register;
