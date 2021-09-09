@@ -50,7 +50,7 @@ const Home = () => {
                 <button className="bg-white shadow hover:bg-green-50 text-green-500  py-2 px-4 rounded" onClick={logOut}>Log out</button>
             </div>
 
-            <div className="px-4 my-2 py-2 mt-4">
+            <div className="px-4 my-2 py-2 mt-4 overflow-auto h-80">
                 {messages.map(({ createdAt, text, photoURL, uid }) => (
                     <div className={`flex px-4 my-2 py-2 rounded w-max ${uid === auth.currentUser?.uid ? 'bg-green-100 items-end' : 'bg-blue-100'}`}>
                         <div className="self-end" key={createdAt}>
