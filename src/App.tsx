@@ -4,7 +4,7 @@ import Register from "./pages/register"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "./config/firebase"
-import Pagenotfount from './pages/pagenotfount';
+import Pagenotfound from './pages/pagenotfound';
 
 function App() {
   const [isAuthenticated] = useAuthState(auth)
@@ -13,10 +13,13 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Register} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="*" component={Pagenotfount} />
+        {isAuthenticated !== null ?
+          <Route exact path="/home" component={Home} /> :
+          <>
+            <Route exact path="/" component={Register} />
+            <Route exact path="/login" component={Login} />
+            {/* <Route path="*" component={Pagenotfound} /> */}
+          </>}
       </Switch>
     </Router>
   )

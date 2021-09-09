@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Pagenotfount() {
+function Pagenotfound() {
     return (
         <div>
             <h1 className="text-green-700 font-bold text-2xl text-center mt-40"> Page not found </h1>
@@ -8,4 +8,4 @@ function Pagenotfount() {
     );
 }
 
-export default Pagenotfount;
+export default Pagenotfound;
