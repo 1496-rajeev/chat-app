@@ -42,9 +42,9 @@ const Register = () => {
                         Sign In
                     </button>
                     <Link to="/login">
-                        <a className="font-bold text-sm text-blue-500 hover:text-blue-600" href="/login">
+                        <p className="font-bold text-sm text-blue-500 hover:text-blue-600" >
                             Already have an account? Login.
-                        </a>
+                        </p>
                     </Link>
                 </div>
             </form>

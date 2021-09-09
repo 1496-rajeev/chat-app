@@ -42,9 +42,9 @@ const Login = () => {
                         Login
                     </button>
                     <Link to='/'>
-                        <a className="font-bold text-sm text-blue-500 hover:text-blue-600">
+                        <p className="font-bold text-sm text-blue-500 hover:text-blue-600">
                             New user? Sign in.
-                        </a>
+                        </p>
                     </Link>
                 </div>
             </form>
